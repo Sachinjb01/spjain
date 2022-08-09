@@ -3,27 +3,14 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="adminportal.Testdashbord">
+      <class name="adminportal.TestSystemtesting">
         <methods>
-          <include name="questionpaper"/>
-          <include name="dashbord"/>
-          <include name="Evaluation"/>
-          <include name="dashbordtab"/>
-          <include name="viewall"/>
-          <include name="ExamManagement"/>
-          <include name="dropdown"/>
-          <include name="listboxdropdown"/>
-          <include name="dashbordoncemore"/>
-          <include name="listbox1"/>
-          <include name="viewalll"/>
-          <include name="teardown"/>
-          <include name="Dashbordagin"/>
-          <include name="Signin"/>
-          <include name="seatplan"/>
           <include name="setup"/>
-          <include name="Invigilation"/>
+          <include name="Input"/>
+          <include name="skiptestcase"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- adminportal.Testdashbord -->
+      </class> <!-- adminportal.TestSystemtesting -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

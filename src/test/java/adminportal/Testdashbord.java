@@ -2,6 +2,7 @@ package adminportal;
 
 import static org.testng.Assert.assertEquals;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -9,6 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -18,141 +21,205 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Testdashbord {
 
 	
-	WebDriver driver;
+public static	WebDriver driver;
 	
 	
-	@SuppressWarnings("deprecation")
 	@BeforeClass
-	public void setup()
+	public void setup() throws Throwable
 	{
 		WebDriverManager.chromedriver().setup();
 	driver=new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	 driver.manage().window().maximize();
+	
 		 driver.get("https://sp-jain-playground-adminportal.ken42.com/app/admin-management/exam\r\n");
-		 driver.manage().window().maximize();
+		 driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
 		
 		
 	}
 	
 	
-	@Test
+	@Test(priority=1)
 	public void Signin() throws Throwable {
-		Thread.sleep(2000);
 		
-		 driver.findElement(By.xpath("//span[.='Sign In']")).click();
-	     
+
+		driver.findElement(By.xpath("//span[.='Sign In']")).click();
+	      
 		
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void drawer() throws Throwable {
-		Thread.sleep(2000);
-		 driver.findElement(By.xpath("//*[name()='svg' and @class='MuiSvgIcon-root jss175']")).click();
+		
+		
+		
+	Thread.sleep(2000);
+		 driver.findElement(By.xpath("//*[name()='svg'and@class='MuiSvgIcon-root jss175']")).click();
 		
 	}
 	
 	
-	@Test
-	public void ExamManagement()
+	@Test(priority=3)
+	public void ExamManagement() throws Throwable
 	{
+		
+		
+	Thread.sleep(2000);
 		   driver.findElement(By.xpath("//span[.='Exam Management']")).click();
 	}
 	
-	@Test
-	public void dashbord() {
-
+	@Test(priority=4)
+	public void dashbord() throws Throwable {
+		
+	
+	Thread.sleep(2000);
 	     driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).click();
 		
 	}
 	
-	@Test
-	public void questionpaper() {
-		driver.findElement(By.xpath("(//span[.='Qstn Paper'])[1]")).click();
+//	@Test(priority=5)
+//	public void questionpaper() throws InterruptedException {
+//		
+//		
+//		
+//	
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("(//span[.='Qstn Paper'])[1]")).click();
+//		
+//	}
+	
+//	@Test(priority=6)
+//	public void seatplan() throws Throwable {
+//		
+//	
+//		Thread.sleep(2000);
+//		 driver.findElement(By.xpath("(//span[.='Seat Plan'])[1]")).click();
+//	}
+	
+//	@Test(priority=7)
+//	public void Dashbordagin() throws Throwable {
+//		
+//		
+//		
+//	
+//		Thread.sleep(2000);
+//		
+//		  driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).click();
+//	}
+//	
+//	@Test(priority=8)
+//	public void Invigilation() throws Throwable {
+//		
+//		
+//	
+//		
+//		Thread.sleep(2000);
+//		 driver.findElement(By.xpath("(//span[.='Invigilation'])[1]")).click();
+//	}
+//	
+	
+//	@Test(priority=9)
+//	public void dashbordtab() throws Throwable {
+//		
+//		
+//		
+//		
+//	
+//		Thread.sleep(2000);
+//		
+//		 driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).click();
+//		
+//	}
+	
+	
+
+
+	@Test(priority=5)
+	public void listbox() throws Throwable {
 		
-	}
-	
-	@Test
-	public void seatplan() {
-		 driver.findElement(By.xpath("(//span[.='Seat Plan'])[1]")).click();
-	}
-	
-	@Test
-	public void Dashbordagin() {
 		
-		  driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).click();
-	}
-	
-	@Test
-	public void Invigilation() {
-		 driver.findElement(By.xpath("(//span[.='Invigilation'])[1]")).click();
-	}
-	
-	
-	@Test
-	public void dashbordtab() {
 		
-		 driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).click();
-		
-	}
 	
-	@Test
-	public void listbox() {
+		
+		Thread.sleep(2000);
 	    driver.findElement(By.xpath("(//div[@aria-haspopup='listbox'])[1]")).click();
 
 		
 	}
-	@Test
-	public void listboxdropdown() {
+	@Test(priority=6)
+	public void listboxdropdown() throws Throwable {
+		
+		
+		
+	
+		
+	Thread.sleep(2000);
 		
 	    driver.findElement(By.xpath("//li[.='15 Days']")).click();
 
 		
 	}
 	
-	@Test
-	public void viewall() {
+	@Test(priority=7)
+	public void viewall() throws Throwable {
+		
+		
+		
+	
+		
+	Thread.sleep(2000);
 	    driver.findElement(By.xpath("(//span[.='View All'])[1]")).click();
 
 	}
 	
-	@Test
-	public void Evaluation() {
+	@Test(priority=8)
+	public void Evaluation() throws Throwable {
+		
+		
+//		
+//		Thread.sleep(2000);
 	    driver.findElement(By.xpath("(//span[.='Evaluation'])[1]")).click();
 
 	}
 	
-	@Test
-	public void dashbordoncemore()
+	@Test(priority=9)
+	public void dashbordoncemore() throws Throwable
 	{
+	Thread.sleep(2000);
 	    driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).click();
 
 	}
 	
-	@Test
-	public void listbox1() {
-		
+	@Test(priority=10)
+	public void listbox1() throws Throwable {
+	Thread.sleep(2000);
 	    driver.findElement(By.xpath("(//div[@aria-haspopup='listbox'])[2]")).click();
 
 		
 	}
 	
-	@Test
-	public void dropdown()
+	@Test(priority=11)
+	public void dropdown() throws Throwable
 	{
-	    driver.findElement(By.xpath("//li[.='15 Days']")).click();
-	    JavascriptExecutor js = (JavascriptExecutor)driver;
-	    js.executeScript("window.scrollBy(0,2000)");
-
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[.='15 Days']")).click();
+	  
 	}
 	
-	@Test
-	public void viewalll() {
-		driver.findElement(By.xpath("(//span[.='View All'])[2]")).click();
+	@Test(priority=12)
+	public void viewalll() throws Throwable {
+		
+		
+	Thread.sleep(2000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div/div/div[3]/div/div[1]/div[3]/button/span[1]")).click();
 	}
 	
 	
 	@AfterClass
-	public void teardown() {
+	public void teardown() throws Throwable {
+		
+		Thread.sleep(2000);
 		driver.quit();
 	}
 }
